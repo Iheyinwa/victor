@@ -9,6 +9,7 @@ import {
   Logo,
   Twitter,
   Mail,
+  LogoMobile,
 } from "../../../Assets/Svgs";
 import { useDeviceCheck } from "../../../Hooks";
 import { devices } from "../../../Utils";
@@ -25,7 +26,7 @@ export const Footer = () => {
     <Container>
       <FooterBody>
         <LogoContainer>
-          <Logo />
+          {isMobile ? <LogoMobile /> : <Logo />}
           <p>Building the best and more efficient product for businesses</p>
         </LogoContainer>
 
@@ -139,6 +140,7 @@ const FooterBottom = styled.section`
 
   @media ${devices.mobileL}{
     flex-direction: column;
+    margin-top: 15%;
   }
 `;
 
@@ -162,10 +164,7 @@ const LinksContainer = styled.div`
   @media ${devices.mobileL} {
     flex-wrap: wrap;
     justify-content: space-between;
-
-    & > :last-child {
-      margin-top: 10%;
-    }
+    gap:20%;
   }
 `;
 const BottomItems = styled.div`

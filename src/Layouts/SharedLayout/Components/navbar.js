@@ -11,6 +11,7 @@ import {
   Search,
   BlackX,
   HomeMenu,
+  LogoMobile
 } from "../../../Assets/Svgs";
 import { useState, useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -237,7 +238,7 @@ export const Navbar = () => {
         <Container>
           <LogoContainer>
             <NavLink to={"/"}>
-              <Logo />
+              <LogoMobile />
             </NavLink>
           </LogoContainer>
 

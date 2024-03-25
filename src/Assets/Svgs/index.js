@@ -78,6 +78,7 @@ import { ReactComponent as InfoIconWhiteBg } from "./infoWhite.svg";
 import { ReactComponent as OrderBag } from "./shoppingBag.svg";
 import { ReactComponent as GiftItem } from "./gift.svg";
 import { ReactComponent as HomeMenu } from "./homeMenu.svg";
+import { ReactComponent as LogoMobile} from "./logoMobile.svg";
 
 export {
   Logo,
@@ -160,4 +161,5 @@ export {
   OrderBag,
   GiftItem,
   HomeMenu,
+  LogoMobile,
 };

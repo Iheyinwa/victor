@@ -230,6 +230,18 @@ const Banner = styled.div`
       text-align: center;
     }
   }
+  
+  @media ${devices.mobileL}{
+    > div{
+      p{
+        font-size: 18px;
+      }
+      h4{
+        font-size: 2.5rem;
+        width: 90%;
+      }
+    }
+  }
 `;
 
 const Footer = styled.div`
@@ -257,10 +269,21 @@ const Footer = styled.div`
       text-align: center;
     }
   }
+
+  @media ${devices.mobileL}{
+    > div{
+      p{
+        font-size: 18px;
+      }
+      h4{
+        font-size: 2.5rem;
+      }
+    }
+  }
 `;
 
 const TestimonyContainer = styled.section`
-  padding: 5% 10%;
+  padding: 10%;
 
   h6 {
     text-align: center;

@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { devices } from "../../../Utils"
 
 export const BlogCard = ({ width }) => {
     return (
@@ -14,17 +15,29 @@ export const BlogCard = ({ width }) => {
 
 const Container = styled.div`
     width: ${({ $width }) => ($width ? $width : "auto")};
-    div{
-        background-color: aliceblue;
+    div {
+        /* background-color: aliceblue; */
     }
 
-    img{
+    img {
         width: 100%;
         height: 19rem;
         object-fit: cover;
     }
-    
-`
+
+    @media ${devices.mobileL} {
+    div {
+        width: 20rem;
+        height: 19rem;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    }
+`;
 
 const Author = styled.p`
     color: var(--gray-250);

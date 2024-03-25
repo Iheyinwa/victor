@@ -32,12 +32,14 @@ const Container = styled.div`
     }
     p {
         font-size: 0.8rem;
+        width: 100%;
         color: var(--gray-400);
         margin-bottom: 1rem;
         text-align: justify;
     }
     @media ${devices.mobileL} {
-        width: 500px;
+        width: 100%;
+        padding: 5% 8%;
     }
 `;
 

@@ -30,6 +30,7 @@ import {
   Mail,
   RedRightArrow,
   RightArrow,
+  UpArrow,
   WhiteX,
 } from "../../Assets/Svgs";
 import Swiper from "swiper";
@@ -387,11 +388,19 @@ const Home = () => {
                 onClick={() => navigate("/signup")}
               />
             )}
-            <GButton
-              label="Shop now"
-              alternate
-              onClick={() => navigate("/marketplace")}
-            />
+            {isMobile ? (
+              <GButton
+                label="Learn More"
+                alternateOutline
+                onClick={() => navigate("/marketplace")}
+              />
+            ) : (
+              <GButton
+                label="Shop now"
+                alternate
+                onClick={() => navigate("/marketplace")}
+              />
+            )}
           </div>
         </div>
       </Wholesale>
@@ -406,7 +415,7 @@ const Home = () => {
         </BlogPostHeader>
         <BlogBody>
           {[...Array(4)].map((_, index) => (
-            <BlogCard key={index} width={!isMobile && "23.8%"} />
+            <BlogCard key={index} width={isMobile ? '100%': "23.8%"} />
           ))}
         </BlogBody>
       </BlogPosts>
@@ -1128,7 +1137,17 @@ const SellerCardsContainer = styled.div`
   display: flex;
   margin-left: 5%;
   gap: 1.2rem;
-  overflow-x: auto !important;
+
+  @media ${devices.mobileL} {
+    max-width: 95vw;
+    overflow-x: auto;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+
+    &::-webkit-scrollbar {
+      display: none; 
+    }
+  }
 `; import { useDeviceCheck } from '../../Hooks/useDeviceCheck';
 
 
@@ -1174,6 +1193,22 @@ const Wholesale = styled.div`
       width: fit-content;
       width: 60%;
       margin: 0 auto;
+    }
+  }
+
+  @media ${devices.mobileL}{
+
+    > div {
+      h4{
+        text-align: center;
+        font-size: 2.5rem;
+      }
+      p{
+        font-size: 20px;
+      }
+      > div{
+        flex-direction: column;
+      }
     }
   }
 `;
@@ -1224,6 +1259,18 @@ const BlogBody = styled.div`
   gap: 20px;
   justify-content: flex-start;
   padding: 0 5%;
+
+  @media ${devices.mobileL} {
+    flex-wrap: nowrap;
+    max-width: 95%;
+    overflow-x: auto;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+
+    &::-webkit-scrollbar {
+      display: none; 
+    }
+  }
 `;
 
 const PartnerSection = styled.section`
